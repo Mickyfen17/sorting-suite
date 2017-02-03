@@ -1,4 +1,7 @@
 const insertionSort = arr => {
+  if(!Array.isArray(arr)) {
+    throw new Error("Must pass in an array");
+  }
   for(let i = 0; i < arr.length; i++) {
     let sorted = arr[i];
     let unsorted = arr[i+1];

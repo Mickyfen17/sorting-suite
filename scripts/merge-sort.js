@@ -1,4 +1,7 @@
 export const split = arr => {
+  if(!Array.isArray(arr)) {
+    throw new Error("Must pass in an array");
+  }
   if(arr.length === 1) {
     return arr;
   } else {
