@@ -32,7 +32,7 @@ describe("testing Bubble Sort", function() {
     for(let i = 0; i < 100; i++) {
       testArray.push("e","c","a","d","b","z","o","i","t","q");
     }
-    let sortedArray = testArray.sort();
+    let sortedArray = testArray.slice().sort();
     expect(bubbleSort(testArray)).to.deep.equal(sortedArray);
   });
 
@@ -41,7 +41,7 @@ describe("testing Bubble Sort", function() {
     for(let i = 0; i < 15000; i++) {
       testArray.push(Math.floor(Math.random() * 15000));
     }
-    let sortedArray = testArray.sort( (a, b) => a - b);
+    let sortedArray = testArray.slice().sort( (a, b) => a - b);
     expect(bubbleSort(testArray)).to.deep.equal(sortedArray);
   });
 

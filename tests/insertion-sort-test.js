@@ -27,21 +27,21 @@ describe("testing Insertion Sort", function() {
     expect(insertionSort(["p","e","x","f","j"])).to.deep.equal(["e","f","j","p","x"]);
   });
 
-  it("should filter an unordered array of 1000 letters", () => {
+  it("should filter an unordered array of 200 letters", () => {
     let testArray= [];
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < 20; i++) {
       testArray.push("z","t","a","d","v","s","i","y","u","l");
     }
-    let sortedArray = testArray.sort();
+    let sortedArray = testArray.slice().sort();
     expect(insertionSort(testArray)).to.deep.equal(sortedArray);
   });
 
-  it("should filter an unordered array of 3.8 million numbers between 0 & 999999", () => {
+  it("should filter an unordered array of 200 numbers between 0 & 200", () => {
     let testArray= [];
-    for(let i = 0; i < 3800000; i++) {
-      testArray.push(Math.floor(Math.random() * 1000000));
+    for(let i = 0; i < 200; i++) {
+      testArray.push(Math.floor(Math.random() * 100));
     }
-    let sortedArray = testArray.sort( (a, b) => a - b);
+    let sortedArray = testArray.slice().sort( (a, b) => a - b);
     expect(insertionSort(testArray)).to.deep.equal(sortedArray);
   });
 

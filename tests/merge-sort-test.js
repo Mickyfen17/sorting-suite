@@ -44,7 +44,7 @@ describe("testing Merge Sort", function() {
     for(let i = 0; i < 100; i++) {
       testArray.push("x","c","t","a","b","z","l","w","c","p");
     }
-    let sortedArray = testArray.sort();
+    let sortedArray = testArray.slice().sort();
     expect(split(testArray)).to.deep.equal(sortedArray);
   });
 
@@ -53,7 +53,7 @@ describe("testing Merge Sort", function() {
     for(let i = 0; i < 150000; i++) {
       testArray.push(Math.floor(Math.random() * 150000));
     }
-    let sortedArray = testArray.sort( (a, b) => a - b);
+    let sortedArray = testArray.slice().sort( (a, b) => a - b);
     expect(split(testArray)).to.deep.equal(sortedArray);
   });
 
