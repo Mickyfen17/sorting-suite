@@ -1,4 +1,4 @@
-const split = arr => {
+export const split = arr => {
   if(arr.length === 1) {
     return arr;
   } else {
@@ -8,7 +8,7 @@ const split = arr => {
   }
 };
 
-const mergeSort = (left, right) => {
+export const mergeSort = (left, right) => {
   let sorted = [];
   while(left.length || right.length) {
     if(left[0] < right[0]) {
@@ -24,4 +24,4 @@ const mergeSort = (left, right) => {
   return sorted;
 };
 
-export default { split, mergeSort };
+// export default { split, mergeSort };
