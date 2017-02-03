@@ -11,25 +11,34 @@ describe("testing Insertion Sort", function() {
     expect(Array.isArray(insertionSort([]))).to.be.true;
   });
 
-  // it('helperSort should return to me an array', () => {
-  //   expect(Array.isArray(helperSort(0, []))).to.be.true;
-  // });
-  //
-  // it('helperSort should add a higher value number after the array index value', () => {
-  //   expect(helperSort(2, [0,1])).to.deep.equal([0,1,2]);
-  // });
-  //
-  // it('helperSort should insert the value number inbetween the existing numbers', () => {
-  //   expect(helperSort(9, [8,10])).to.deep.equal([8,9,10]);
-  // });
-  //
-  // it("insertionSort filter an unordered array of numbers", () => {
-  //   expect(insertionSort([4,2,0,3,1])).to.deep.equal([0,1,2,3,4]);
-  // });
-  //
-  // it("insertionSort filter an unordered array of letters", () => {
-  //   expect(insertionSort(["e","c","a","d","b"])).to.deep.equal(["a","b","c","d","e"]);
-  // });
+  it("should check for a output", () => {
+    expect(insertionSort([5,6,7])).to.deep.equal([5,6,7]);
+  });
 
+  it("insertionSort filter an unordered array of numbers", () => {
+    expect(insertionSort([11,3,7,16,1])).to.deep.equal([1,3,7,11,16]);
+  });
+
+  it("insertionSort filter an unordered array of letters", () => {
+    expect(insertionSort(["p","e","x","f","j"])).to.deep.equal(["e","f","j","p","x"]);
+  });
+
+  it("should filter an unordered array of 1000 letters", () => {
+    let testArray= [];
+    for(let i = 0; i < 100; i++) {
+      testArray.push("z","t","a","d","v","s","i","y","u","l");
+    }
+    let sortedArray = testArray.sort();
+    expect(insertionSort(testArray)).to.deep.equal(sortedArray);
+  });
+
+  it("should filter an unordered array of 3.8 million numbers between 0 & 999999", () => {
+    let testArray= [];
+    for(let i = 0; i < 3800000; i++) {
+      testArray.push(Math.floor(Math.random() * 1000000));
+    }
+    let sortedArray = testArray.sort( (a, b) => a - b);
+    expect(insertionSort(testArray)).to.deep.equal(sortedArray);
+  });
 
 });
