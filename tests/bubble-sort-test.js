@@ -11,6 +11,10 @@ describe("testing Bubble Sort", function() {
     expect(Array.isArray(bubbleSort([]))).to.be.true;
   });
 
+  it("should throw an error when function does not receive an array", () => {
+    expect( () => bubbleSort("hello") ).to.throw(("Must pass in an array"));
+  });
+
   it("should check for a output", () => {
     expect(bubbleSort([1,2,3])).to.deep.equal([1,2,3]);
   });

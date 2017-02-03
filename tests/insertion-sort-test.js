@@ -11,6 +11,10 @@ describe("testing Insertion Sort", function() {
     expect(Array.isArray(insertionSort([]))).to.be.true;
   });
 
+  it("should throw an error when function does not receive an array", () => {
+    expect( () => insertionSort("hello") ).to.throw(("Must pass in an array"));
+  });
+
   it("should check for a output", () => {
     expect(insertionSort([5,6,7])).to.deep.equal([5,6,7]);
   });

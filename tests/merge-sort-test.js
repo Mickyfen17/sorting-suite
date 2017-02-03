@@ -19,6 +19,10 @@ describe("testing Merge Sort", function() {
     expect(Array.isArray(mergeSort([], []))).to.be.true;
   });
 
+  it("should throw an error when function does not receive an array", () => {
+    expect( () => split("hello") ).to.throw(("Must pass in an array"));
+  });
+
   it("split should check for a output", () => {
     expect(split([1,2,3])).to.deep.equal([1,2,3]);
   });
@@ -52,5 +56,5 @@ describe("testing Merge Sort", function() {
     let sortedArray = testArray.sort( (a, b) => a - b);
     expect(split(testArray)).to.deep.equal(sortedArray);
   });
-  
+
 });
